@@ -40,8 +40,8 @@ p { font-size: 1rem; }
 .lede { max-width: 700px; margin: 20px 0 0; color: var(--ink-soft); font-size: 1rem; line-height: 1.65; text-align: left; text-wrap: pretty; }
 .hero-copy { padding: 22px 0 52px; border-bottom: 1px solid var(--line); text-align: left; }
 .hero-copy h1 { margin-top: 14px; }
-.section { padding-top: 58px; text-align: left; }
-.section h2 { margin-top: 10px; }
+.section { padding-top: 24px; text-align: left; }
+.section h2 { margin-top: 6px; }
 .section-copy { max-width: 700px; margin: 18px 0 0; color: var(--ink-soft); font-size: .98rem; line-height: 1.65; text-align: left; text-wrap: pretty; }
 .card p, .step p, .cta p { text-align: left; }
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; margin-top: 26px; padding: 0 22px; border: 0; border-radius: 12px; color: var(--ink); background: linear-gradient(135deg, var(--apricot) 0%, #f5cfa1 100%); font-weight: 800; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; box-shadow: 0 12px 24px rgb(230 106 78 / 18%); transition: transform .2s ease, box-shadow .2s ease, filter .2s ease; }
@@ -62,7 +62,7 @@ p { font-size: 1rem; }
 .card { min-width: 0; padding: 24px; border: 1px solid rgba(18, 60, 67, .06); border-radius: 16px; background: rgba(255, 255, 255, .92); box-shadow: var(--shadow-card); text-align: left; }
 .card img { display: block; width: 100%; height: auto; border-radius: 10px; }
 .card p { margin-top: 10px; color: var(--ink-soft); font-size: .95rem; line-height: 1.55; text-align: left; text-wrap: pretty; }
-.product-grid { gap: 18px; }
+.product-grid { gap: 18px; margin-top: 12px; }
 .product-grid .card { padding: 16px; }
 .product-grid .card img { height: 200px; object-fit: cover; }
 .product-grid .card h3 { margin-top: 14px; }
