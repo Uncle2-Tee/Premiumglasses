@@ -30,7 +30,7 @@ main { width: 100%; }
 .nav-link:active { transform: translateY(1px) scale(.99); }
 .nav-link.active { color: var(--apricot); }
 .page { width: min(1100px, calc(100% - 48px)); margin: 0 auto; padding: 52px 0 80px; text-align: left; }
-.eyebrow, .section-label { color: var(--coral); font-size: .75rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.eyebrow, .section-label { color: var(--coral); font-size: .75rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; text-align: center; }
 h1, h2, h3, p { margin: 0; }
 h1, h2, h3 { font-family: var(--font-display); }
 h1 { max-width: 820px; margin-right: auto; margin-left: 0; font-size: clamp(2.7rem, 5.2vw, 5rem); line-height: .96; letter-spacing: -.06em; text-align: left; }
@@ -51,11 +51,11 @@ p { font-size: 1rem; }
 .hero-image img { object-fit: cover; opacity: .72; }
 .hero-image::after { position: absolute; inset: 0; content: ''; background: linear-gradient(90deg, rgb(8 40 45 / 86%), rgb(8 40 45 / 28%)); }
 .hero-image-copy { position: relative; z-index: 1; width: min(700px, calc(100% - 64px)); padding: 18px 20px 20px; border: 1px solid rgba(255, 255, 255, .12); border-radius: 18px; background: rgba(8, 40, 45, .34); color: var(--white); text-align: left; backdrop-filter: blur(4px); transform: translateY(-10px); }
-.home-copy-card { box-shadow: 0 10px 26px rgb(8 40 45 / 18%); }
+.home-copy-card { display: flex; flex-direction: column; align-items: center; box-shadow: 0 10px 26px rgb(8 40 45 / 18%); }
 .hero-image-copy .lede { margin-top: 14px; color: #d8e8e7; text-align: left; }
 .hero-image-copy h1 { margin-top: 10px; }
-.hero-image-copy .eyebrow { color: var(--apricot); font-weight: 900; letter-spacing: .08em; }
-.hero-image-copy .button { margin-top: 18px; }
+.hero-image-copy .eyebrow { color: var(--apricot); font-weight: 900; letter-spacing: .08em; text-align: left; }
+.hero-image-copy .button { margin-top: 18px; align-self: center; }
 .grid-3, .grid-2 { display: grid; gap: 16px; }
 .grid-3 { grid-template-columns: repeat(3, 1fr); }
 .grid-2 { grid-template-columns: repeat(2, 1fr); }
