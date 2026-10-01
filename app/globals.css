@@ -649,33 +649,6 @@ p { font-size: 1rem; }
   text-transform: uppercase;
 }
 
-.page-navigation {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  width: min(1100px, calc(100% - 32px));
-  margin: 24px auto 0;
-  padding: 16px 0 28px;
-  border-top: 1px solid var(--line);
-}
-
-.page-nav-link {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  max-width: 48%;
-  min-width: 0;
-  padding: 6px 8px;
-  border-radius: 8px;
-  color: var(--ink);
-}
-
-.page-nav-link.next { margin-left: auto; text-align: right; }
-.page-nav-link span { display: grid; min-width: 0; line-height: 1.35; }
-.page-nav-link small { color: var(--ink-soft); font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
-.page-nav-link strong { overflow-wrap: anywhere; font-size: .9rem; }
-.page-nav-link:hover, .page-nav-link:focus-visible, .page-nav-link:active { color: var(--coral); background: rgba(216, 232, 231, .45); }
-
 @media (max-width: 900px) {
   .glass-hero,
   .glass-why-layout,
@@ -830,10 +803,6 @@ p { font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
-  .page-navigation { width: calc(100% - 24px); gap: 4px; }
-  .page-nav-link { max-width: 50%; gap: 6px; padding: 6px 2px; }
-  .page-nav-link strong { font-size: .8rem; }
-
   .landing-main { width: 100%; padding: 12px 10px 16px; }
   .landing-inline-nav { justify-content: flex-end; gap: 4px 12px; }
   .landing-inline-nav-link { min-height: 36px; padding: 0 4px; font-size: 11px; }
@@ -849,8 +818,8 @@ p { font-size: 1rem; }
 .site-brand-logo { display: block; width: 100%; height: 100%; object-fit: contain; }
 .site-nav { display: flex; align-items: center; justify-content: flex-end; gap: 8px; width: auto; min-width: 0; overflow: visible; padding: 0; }
 .site-nav-link { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 0 13px; border: 1px solid transparent; border-radius: 8px; color: var(--ink); font-size: 14px; font-weight: 700; white-space: nowrap; }
-.site-nav-link:hover, .site-nav-link:focus-visible { border-color: rgba(230, 106, 78, .38); color: var(--coral); background: rgba(230, 106, 78, .1); }
-.site-nav-link.active { border-color: rgba(230, 106, 78, .3); color: var(--coral); background: rgba(230, 106, 78, .08); }
+.site-nav-link:hover, .site-nav-link:focus-visible { color: var(--coral); background: transparent; text-decoration: underline; text-underline-offset: 4px; outline: none; }
+.site-nav-link.active { color: var(--coral); background: transparent; }
 .site-nav-toggle { display: none; }
 
 @media (max-width: 760px) {

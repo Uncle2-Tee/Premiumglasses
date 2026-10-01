@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { PageNavigation } from '../components/page-navigation';
 import { SiteHeader } from '../components/site-header';
 import './globals.css';
 
@@ -15,7 +14,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <SiteHeader />
         <main>
           {children}
-          <PageNavigation />
         </main>
       </body>
     </html>
