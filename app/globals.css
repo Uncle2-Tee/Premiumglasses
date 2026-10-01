@@ -662,7 +662,8 @@ p { font-size: 1rem; }
   }
 
   .glass-top-nav {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
     align-items: center;
     gap: 10px;
     padding: 10px 12px;
@@ -675,21 +676,19 @@ p { font-size: 1rem; }
   }
 
   .glass-nav-menu {
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .glass-nav-menu.is-open {
-    flex-basis: 100%;
+    display: contents;
   }
 
   .glass-nav-toggle {
+    grid-column: 2;
+    grid-row: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    justify-self: end;
     width: 44px;
     height: 44px;
-    margin-left: auto;
+    margin-left: 0;
     padding: 0;
     border: 1px solid rgba(18, 18, 18, 0.16);
     border-radius: 10px;
@@ -704,7 +703,7 @@ p { font-size: 1rem; }
 
   .glass-top-nav-links.is-open {
     display: grid;
-    flex: 1 0 100%;
+    grid-column: 1 / -1;
     grid-template-columns: 1fr;
     gap: 0;
     width: 100%;
