@@ -1,22 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { HomeNavigation } from '../components/home-navigation';
-import philLogo from '../assets/images/phil-logo.png';
-
-const navItems = [
-  { label: 'Home', href: '/' },
-  { label: 'Products', href: '/products' },
-  { label: 'Services', href: '/services' },
-  { label: 'Gallery', href: '/gallery' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-];
 
 const featureItems = [
   {
     title: 'Glass Windows',
     description: 'Clear, tinted, frosted, and made-to-measure windows designed to suit homes, offices, and commercial spaces.',
-    image: '/images/w1.jpg',
+    image: '/images/w1-20261001.jpg',
   },
   {
     title: 'Glass Doors',
@@ -79,13 +68,6 @@ export default function HomePage() {
     <div className="glass-landing-shell">
       <main className="glass-landing-main">
         <div className="glass-shell-inner">
-          <nav className="glass-top-nav" aria-label="Main navigation">
-            <Link className="glass-brand-logo-link" href="/" aria-label="Philipo Inzaghi Glass home">
-              <Image className="glass-brand-logo" src={philLogo} alt="Philipo Inzaghi Glass" priority />
-            </Link>
-            <HomeNavigation items={navItems} />
-          </nav>
-
           <section className="glass-hero glass-panel">
             <div className="glass-hero-copy">
               <h1>Premium Glass Solutions for Every Space</h1>

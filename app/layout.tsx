@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import { PageNavigation } from '../components/page-navigation';
+import { SiteHeader } from '../components/site-header';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -10,7 +12,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" data-scroll-behavior="smooth">
       <body>
-        <main>{children}</main>
+        <SiteHeader />
+        <main>
+          {children}
+          <PageNavigation />
+        </main>
       </body>
     </html>
   );

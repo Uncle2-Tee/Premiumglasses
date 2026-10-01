@@ -1,41 +1,58 @@
  'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Images, Info, Package, Phone, Wrench } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import { useState } from 'react';
+import philLogo from '../assets/images/phil-logo.png';
 
 const navigationItems = [
-  { label: 'Home', href: '/', icon: Home },
-  { label: 'Products', href: '/products', icon: Package },
-  { label: 'Services', href: '/services', icon: Wrench },
-  { label: 'Gallery', href: '/gallery', icon: Images },
-  { label: 'About Us', href: '/about', icon: Info },
-  { label: 'Contact Us', href: '/contact', icon: Phone },
+  { label: 'Home', href: '/' },
+  { label: 'Products', href: '/products' },
+  { label: 'Services', href: '/services' },
+  { label: 'Gallery', href: '/gallery' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <header className="site-header">
-      <div className="brand-mark" aria-label="Philipo Inzaghi Glass home">
-        <span className="brand-word" aria-hidden="true">
-          {'Philipo'.split('').map((letter, index) => <span className="brand-letter" key={`${letter}-${index}`}>{letter}</span>)}
-        </span>
-        <strong className="brand-word" aria-hidden="true">
-          {'Inzaghi'.split('').map((letter, index) => <span className="brand-letter" key={`${letter}-${index}`}>{letter}</span>)}
-        </strong>
+      <div className="site-header-inner">
+        <Link className="site-brand-link" href="/" aria-label="Philipo Inzaghi Glass home">
+          <Image className="site-brand-logo" src={philLogo} alt="" priority />
+        </Link>
+        <button
+          className="site-nav-toggle"
+          type="button"
+          aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={isOpen}
+          aria-controls="site-primary-navigation"
+          onClick={() => setIsOpen((open) => !open)}
+        >
+          {isOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+        </button>
+        <nav className={`site-nav${isOpen ? ' is-open' : ''}`} id="site-primary-navigation" aria-label="Primary navigation">
+          {navigationItems.map(({ label, href }) => {
+            const active = href === '/' ? pathname === href : pathname === href || (href === '/gallery' && pathname.startsWith('/gallery-'));
+            return (
+              <Link
+                className={`site-nav-link${active ? ' active' : ''}`}
+                href={href}
+                key={href}
+                aria-current={active ? 'page' : undefined}
+                onClick={() => setIsOpen(false)}
+              >
+                {label}
+              </Link>
+            );
+          })}
+        </nav>
       </div>
-      <nav className="site-nav" aria-label="Primary navigation">
-        {navigationItems.map(({ label, href, icon: Icon }) => {
-          const active = href === '/' ? pathname === href : pathname.startsWith(href);
-          return (
-            <Link className={`nav-link${active ? ' active' : ''}`} href={href} key={href}>
-              <Icon size={16} strokeWidth={2.4} aria-hidden="true" />
-              <span>{label}</span>
-            </Link>
-          );
-        })}
-      </nav>
     </header>
   );
 }
