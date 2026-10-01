@@ -675,6 +675,12 @@ p { font-size: 1rem; }
 }
 
 @media (max-width: 640px) {
+  .glass-why-layout { grid-template-columns: minmax(0, 1fr); gap: 14px; min-width: 0; }
+  .glass-why-points { grid-template-columns: minmax(0, 1fr); min-width: 0; }
+  .glass-why-item { min-width: 0; }
+  .glass-why-item p { min-width: 0; overflow-wrap: anywhere; }
+  .glass-why-callout { width: 100%; min-width: 0; max-width: 100%; padding: 16px 14px; border-radius: 14px; }
+  .glass-why-callout p { min-width: 0; max-width: 100%; font-size: .92rem; line-height: 1.55; overflow-wrap: anywhere; }
   .glass-footer { grid-template-columns: 1fr; gap: 14px; padding: 16px 14px; }
   .glass-footer-links { gap: 10px; }
 }
