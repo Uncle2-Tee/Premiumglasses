@@ -23,9 +23,9 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header-inner">
-        <Link className="site-brand-link" href="/" aria-label="Philipo Inzaghi Glass home">
-          <Image className="site-brand-logo" src={philLogo} alt="" priority />
-        </Link>
+        <div className="site-brand">
+          <Image className="site-brand-logo" src={philLogo} alt="Philipo Inzaghi Glass" priority />
+        </div>
         <button
           className="site-nav-toggle"
           type="button"
