@@ -656,6 +656,7 @@ p { font-size: 1rem; }
 
 .glass-footer-links h2,
 .glass-footer-meta h2 { margin: 0 0 2px; color: #171717; font-size: .65rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.glass-footer-copyright { grid-column: 1 / -1; margin: 0; padding-top: 10px; border-top: 1px solid rgba(23, 23, 23, .18); color: rgba(18, 18, 18, .65); font-size: .68rem; line-height: 1.4; text-align: center; }
 
 @media (max-width: 900px) {
   .glass-hero,

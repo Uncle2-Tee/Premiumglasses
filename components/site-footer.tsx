@@ -33,6 +33,7 @@ export function SiteFooter() {
         <a href="mailto:philipoinzaghi250@gmail.com">philipoinzaghi250@gmail.com</a>
         <span>Ashalaja</span>
       </div>
+      <p className="glass-footer-copyright">© 2026 PremiumGlasses. All Rights Reserved.</p>
     </footer>
   );
 }
