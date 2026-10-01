@@ -183,31 +183,6 @@ export default function HomePage() {
             </Link>
           </section>
 
-          <footer className="glass-footer">
-            <div className="glass-footer-brand">
-              <span className="glass-footer-logo">Philipo Inzaghi Glass</span>
-              <p>Premium glass solutions for residential and commercial projects.</p>
-            </div>
-            <div className="glass-footer-links">
-              <div>
-                <h4>Explore</h4>
-                <Link href="/products">Products</Link>
-                <Link href="/services">Services</Link>
-                <Link href="/gallery">Gallery</Link>
-              </div>
-              <div>
-                <h4>Company</h4>
-                <Link href="/about">About</Link>
-                <Link href="/contact">Contact</Link>
-              </div>
-            </div>
-            <div className="glass-footer-meta">
-              <h4>Contact</h4>
-              <a href="tel:0248329783">0248329783</a>
-              <a href="mailto:philipoinzaghi250@gmail.com">philipoinzaghi250@gmail.com</a>
-              <span>Ashalaja</span>
-            </div>
-          </footer>
         </div>
       </main>
     </div>
