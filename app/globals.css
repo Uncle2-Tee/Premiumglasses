@@ -904,10 +904,12 @@ p { font-size: 1rem; }
   .site-nav { display: none; grid-column: 1 / -1; flex-direction: column; align-items: stretch; gap: 0; width: 100%; padding-top: 6px; border-top: 1px solid var(--line); }
   .site-nav.is-open { display: flex; }
   .site-nav-link { justify-content: flex-start; min-height: 44px; padding: 0 10px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; }
-  .mobile-bottom-nav { position: fixed; right: 12px; bottom: 12px; left: 12px; z-index: 30; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; padding: 8px 10px; border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 999px; background: rgba(17, 22, 25, 0.88); box-shadow: 0 12px 24px rgba(17, 22, 25, 0.22); backdrop-filter: blur(14px); }
-  .mobile-bottom-nav-link { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 46px; border-radius: 999px; color: rgba(255, 255, 255, 0.7); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
-  .mobile-bottom-nav-link:hover, .mobile-bottom-nav-link:focus-visible { color: #fff; text-decoration: none; }
-  .mobile-bottom-nav-link.active { background: rgba(255, 255, 255, 0.08); color: #fff; }
+  .mobile-bottom-nav { position: fixed; right: 0; bottom: 0; left: 0; z-index: 30; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); border: 0; border-radius: 0; background: #f5f1e8; box-shadow: none; backdrop-filter: none; }
+  .mobile-bottom-nav-link { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; border-radius: 0; color: var(--ink); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; text-shadow: 0 1px 2px rgba(255, 255, 255, 0.9); }
+  .mobile-bottom-nav-link svg { filter: drop-shadow(0 1px 2px rgba(255, 255, 255, 0.9)); }
+  .mobile-bottom-nav-link + .mobile-bottom-nav-link { border-left: 1px solid rgba(18, 60, 67, 0.2); }
+  .mobile-bottom-nav-link:hover, .mobile-bottom-nav-link:focus-visible { color: var(--coral); text-decoration: none; }
+  .mobile-bottom-nav-link.active { background: transparent; color: var(--coral); }
 }
 
 .services-cta { width: min(100%, 760px); margin-right: auto; margin-left: auto; text-align: center; }
@@ -919,4 +921,3 @@ p { font-size: 1rem; }
   .services-cta { width: 100%; padding: 24px 18px; }
   .services-cta .button { width: 100%; }
 }
-
