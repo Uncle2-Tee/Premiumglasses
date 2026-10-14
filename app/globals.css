@@ -374,6 +374,54 @@ p { font-size: 1rem; }
   padding-bottom: 18px;
 }
 
+.glass-trust-strip {
+  padding-top: 10px;
+}
+
+.glass-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.glass-trust-card {
+  padding: 20px 18px 18px;
+  border: 1px solid rgba(18, 18, 18, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-card);
+}
+
+.glass-trust-card span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(230, 106, 78, 0.12);
+  color: #1f1f1f;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.glass-trust-card h3 {
+  margin-top: 14px;
+  color: #1d1d1d;
+  font-size: 1.14rem;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+}
+
+.glass-trust-card p {
+  margin-top: 8px;
+  color: rgba(18, 18, 18, 0.7);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
 .glass-partner-row {
   display: flex;
   flex-wrap: wrap;
@@ -664,13 +712,20 @@ p { font-size: 1rem; }
   .glass-footer { grid-template-columns: 1.2fr 1fr; }
 
   .glass-card-grid,
-  .glass-review-grid {
+  .glass-review-grid,
+  .glass-trust-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .glass-cta {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .glass-trust-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

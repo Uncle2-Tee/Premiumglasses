@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 export function SiteFooter() {
   const pathname = usePathname();
 
-  if (pathname.startsWith('/admin')) return null;
+  if (pathname === '/' || pathname.startsWith('/admin')) return null;
 
   return (
     <footer className="glass-footer">

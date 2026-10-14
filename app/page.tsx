@@ -63,6 +63,24 @@ const faqs = [
   'How long does installation usually take?',
 ];
 
+const trustHighlights = [
+  {
+    tag: 'Bespoke',
+    title: 'Tailored to your space',
+    description: 'Architecturally consistent finishes and sizes chosen around your property and design intent.',
+  },
+  {
+    tag: 'Reliable',
+    title: 'Measured and installed with precision',
+    description: 'From consultation to fitting, every stage is managed for quality, safety, and clean presentation.',
+  },
+  {
+    tag: 'Versatile',
+    title: 'Homes, shops and commercial sites',
+    description: 'Flexible glass solutions designed for daily use across residential and business environments.',
+  },
+];
+
 export default function HomePage() {
   return (
     <div className="glass-landing-shell">
@@ -92,95 +110,21 @@ export default function HomePage() {
             </div>
           </section>
 
-          <section className="glass-features glass-panel">
+          <section className="glass-trust-strip glass-panel">
             <div className="glass-section-heading">
-              <p>Featured</p>
-              <h2>Our specialist solutions</h2>
+              <p>Professional service</p>
+              <h2>Thoughtful glazing for modern spaces</h2>
             </div>
 
-            <div className="glass-card-grid">
-              {featureItems.map((item) => (
-                <article key={item.title} className="glass-feature-card">
-                  <div className="glass-card-image">
-                    <Image src={item.image} alt={item.title} fill sizes="(max-width: 900px) 100vw, 33vw" />
-                  </div>
+            <div className="glass-trust-grid">
+              {trustHighlights.map((item) => (
+                <article key={item.title} className="glass-trust-card">
+                  <span>{item.tag}</span>
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
                 </article>
               ))}
             </div>
-          </section>
-
-          <section className="glass-why glass-panel">
-            <div className="glass-section-heading">
-              <p>Why choose us</p>
-              <h2>Built around quality and trust</h2>
-            </div>
-
-            <div className="glass-why-layout">
-              <div className="glass-why-points">
-                {reasons.map((reason, index) => (
-                  <div key={reason} className="glass-why-item">
-                    <span>{index + 1}</span>
-                    <p>{reason}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="glass-why-callout">
-                <p>
-                  We combine craftsmanship, expert guidance, and reliable installation so your glass project looks
-                  beautiful and performs for years.
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <section className="glass-review glass-panel">
-            <div className="glass-section-heading center">
-              <p>Reviews</p>
-              <h2>Clients trust our work</h2>
-            </div>
-
-            <div className="glass-review-grid">
-              {reviews.map((review) => (
-                <article key={review.name} className="glass-review-card">
-                  <div className="glass-stars" aria-label="Five star review">
-                    ★★★★★
-                  </div>
-                  <p>“{review.quote}”</p>
-                  <strong>{review.name}</strong>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          <section className="glass-faq glass-panel">
-            <div className="glass-section-heading">
-              <p>FAQ</p>
-              <h2>Answers to common questions</h2>
-            </div>
-            <div className="glass-faq-list">
-              {faqs.map((faq, index) => (
-                <details key={faq} className="glass-faq-item" open={index === 0}>
-                  <summary>{faq}</summary>
-                  <p>
-                    Our team helps with measurements, material selection, design suggestions, and installation so each
-                    glass solution matches your needs, budget, and intended space.
-                  </p>
-                </details>
-              ))}
-            </div>
-          </section>
-
-          <section className="glass-cta glass-panel">
-            <div>
-              <p className="glass-kicker light">Ready to begin?</p>
-              <h2>Let us help you choose the right glass for your next project.</h2>
-            </div>
-            <Link href="/contact" className="glass-primary-button dark-button">
-              Request a call back
-            </Link>
           </section>
 
         </div>
