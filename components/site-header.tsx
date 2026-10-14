@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { House, Info, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import philLogo from '../assets/images/phil-logo.png';
 
@@ -21,38 +21,51 @@ export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="site-header">
-      <div className="site-header-inner">
-        <div className="site-brand">
-          <Image className="site-brand-logo" src={philLogo} alt="Philipo Inzaghi Glass" priority />
+    <>
+      <header className="site-header">
+        <div className="site-header-inner">
+          <div className="site-brand">
+            <Image className="site-brand-logo" src={philLogo} alt="Philipo Inzaghi Glass" priority />
+          </div>
+          <button
+            className="site-nav-toggle"
+            type="button"
+            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isOpen}
+            aria-controls="site-primary-navigation"
+            onClick={() => setIsOpen((open) => !open)}
+          >
+            {isOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+          </button>
+          <nav className={`site-nav${isOpen ? ' is-open' : ''}`} id="site-primary-navigation" aria-label="Primary navigation">
+            {navigationItems.map(({ label, href }) => {
+              const active = href === '/' ? pathname === href : pathname === href || (href === '/gallery' && pathname.startsWith('/gallery-'));
+              return (
+                <Link
+                  className={`site-nav-link${active ? ' active' : ''}`}
+                  href={href}
+                  key={href}
+                  aria-current={active ? 'page' : undefined}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {label}
+                </Link>
+              );
+            })}
+          </nav>
         </div>
-        <button
-          className="site-nav-toggle"
-          type="button"
-          aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          aria-expanded={isOpen}
-          aria-controls="site-primary-navigation"
-          onClick={() => setIsOpen((open) => !open)}
-        >
-          {isOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
-        </button>
-        <nav className={`site-nav${isOpen ? ' is-open' : ''}`} id="site-primary-navigation" aria-label="Primary navigation">
-          {navigationItems.map(({ label, href }) => {
-            const active = href === '/' ? pathname === href : pathname === href || (href === '/gallery' && pathname.startsWith('/gallery-'));
-            return (
-              <Link
-                className={`site-nav-link${active ? ' active' : ''}`}
-                href={href}
-                key={href}
-                aria-current={active ? 'page' : undefined}
-                onClick={() => setIsOpen(false)}
-              >
-                {label}
-              </Link>
-            );
-          })}
-        </nav>
-      </div>
-    </header>
+      </header>
+
+      <nav className="mobile-bottom-nav" aria-label="Mobile quick navigation">
+        <Link className={`mobile-bottom-nav-link${pathname === '/' ? ' active' : ''}`} href="/" aria-current={pathname === '/' ? 'page' : undefined}>
+          <House size={18} aria-hidden="true" />
+          <span>Home</span>
+        </Link>
+        <Link className={`mobile-bottom-nav-link${pathname === '/about' ? ' active' : ''}`} href="/about" aria-current={pathname === '/about' ? 'page' : undefined}>
+          <Info size={18} aria-hidden="true" />
+          <span>About</span>
+        </Link>
+      </nav>
+    </>
   );
 }
